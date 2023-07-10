@@ -37,3 +37,11 @@ module apim 'apim.bicep' = {
       apiManagmentLoggingEventHubName: apiManagmentLoggingEventHubName
 }
 }
+
+// APIM - Policy
+module apimConfig 'apim-policy-fragments.bicep' = {
+	name: 'apimConfig'
+	params: {
+      apiManagementServiceName: apiManagementServiceName
+}
+}
