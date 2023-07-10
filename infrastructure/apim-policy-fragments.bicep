@@ -26,15 +26,6 @@ resource namedValue_QuotaQueryKey 'Microsoft.ApiManagement/service/namedValues@2
   }
 }
 
-resource policy 'Microsoft.ApiManagement/service/policyFragments@2022-09-01-preview' = {
-  name: 'string'
-  parent: apiManagementService
-  properties: {
-    description: 'string'
-    format: 'string'
-    value: 'string'
-  }
-}
 resource myFragment 'Microsoft.ApiManagement/service/policyFragments@2022-08-01' = {
   name: 'demo-fragment'
   parent: apiManagementService
