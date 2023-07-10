@@ -40,7 +40,7 @@ resource myFragment 'Microsoft.ApiManagement/service/policyFragments@2022-08-01'
   parent: apiManagementService
   properties: {
     description: 'x-request-context-data'
-    format: 'xml'
+    format: 'rawxml'
     value: loadTextContent('apim-policy-fragment-demo.xml')
   }
 }
