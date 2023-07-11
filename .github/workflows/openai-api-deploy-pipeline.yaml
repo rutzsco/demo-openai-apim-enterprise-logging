@@ -5,7 +5,6 @@ on:
     paths-ignore:
       - 'README.md'
       - 'APIM/**'
-      - '.github/workflows/**'
 
 # CONFIGURATION
 # For help, go to https://github.com/Azure/Actions
