@@ -1,5 +1,5 @@
 on: [push]
-name: Azure ARM v2
+name: Deploy APIM Core
 jobs:
   build-and-deploy:
     env:
