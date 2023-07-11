@@ -24,6 +24,29 @@ param apiManagmentLoggingEventHubNamespaceName string
 param apiManagmentLoggingEventHubName string
 
 
+param logAnalyticsWorkspaceName string
+param functionAppName string
+param functionAppStorageAccountName string
+
+// Log Analytics
+module logAnalytics 'log-analytics.bicep' = {
+      name: 'logAnalytics' 
+      params: {
+        workspaceName: logAnalyticsWorkspaceName
+        location: location
+      }
+    }
+// Function
+module function 'function.bicep' = {
+      name: 'functionDeploy'
+      params: {
+        location: location
+        functionAppName: functionAppName
+        storageAccountName: functionAppStorageAccountName
+        logAnalyticsWorkspaceId: logAnalytics.outputs.id
+      }
+    }
+
 // APIM - Core Service
 module apim 'apim.bicep' = {
 	name: 'apim'

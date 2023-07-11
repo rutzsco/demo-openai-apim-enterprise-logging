@@ -8,6 +8,9 @@ jobs:
       apiManagmentPublisherName: 'rutzsco'
       apiManagmentLoggingEventHubNamespaceName: 'rutzsco-demo-apiops'
       apiManagmentLoggingEventHubName: 'telemetry'
+      logAnalyticsWorkspaceName: 'rutzsco-apim-custom-rate-limiting'
+      functionAppName: 'rutzsco-apim-custom-rate-limiting'
+      functionAppStorageAccountName: 'rutzapimcustratelimit'
     runs-on: ubuntu-latest
     steps:
 
@@ -39,4 +42,7 @@ jobs:
            apiManagmentPublisherName=${{ env.apiManagmentPublisherName }}
            apiManagmentLoggingEventHubNamespaceName=${{ env.apiManagmentLoggingEventHubNamespaceName }}
            apiManagmentLoggingEventHubName=${{ env.apiManagmentLoggingEventHubName }}
+           logAnalyticsWorkspaceName=${{ env.logAnalyticsWorkspaceName }}
+           functionAppName=${{ env.functionAppName }}
+           functionAppStorageAccountName=${{ env.functionAppStorageAccountName }}
         failOnStdErr: false

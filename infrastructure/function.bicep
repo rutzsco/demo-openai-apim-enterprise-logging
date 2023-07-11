@@ -3,9 +3,6 @@ param storageAccountName string
 param logAnalyticsWorkspaceId string
 param location string = resourceGroup().location
 
-@secure()
-param cosmosDBConnectionString string
-
 var appInsightsName = functionAppName
 var appServicePlanName = functionAppName
 
@@ -84,10 +81,6 @@ resource functionApp 'Microsoft.Web/sites@2020-12-01' = {
         {
           name: 'WEBSITE_NODE_DEFAULT_VERSION'
           value: '~14'
-        }
-        {
-          name: 'CosmosDBConnectionString'
-          value: cosmosDBConnectionString
         }
       ]
     }
